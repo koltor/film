@@ -1,0 +1,14 @@
+<% @saison.episodes.each do |e| %>
+		<%= link_to  e.num, episode_path(e.id), remote: true, class:"saison stext",id:e.id%>
+<% end %>
+<div id="nvxe" >
+	<%= form_tag new_episode_path, remote: true ,method: "get" do %>
+		<%= hidden_field_tag(:id, @saison.id) %>
+		<%= submit_tag("+", class:"stext stext2 ") %>
+	<% end %>
+</div>
+<div class="epnew"></div>
+<hr>
+<script>
+	
+</script>

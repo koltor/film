@@ -1,0 +1,165 @@
+.card
+{
+	/* couleur (dans le code direct)*/ 
+	/* position */
+		display: inline-block;
+		float: left;
+		margin-right: 4px;
+		margin-bottom: 4px;
+
+	/* securite (par default) */
+		width: 150px;
+
+	/* les bordures */
+		border-style: ridge;
+		border-width: 1px;
+		border-radius: 3px;
+
+	/* les ombres */
+	box-shadow: 3px 3px 0px grey;
+}
+
+.card:hover /*le hover de la carte */
+{
+	box-shadow: 3px 3px 3px 3px grey;
+	opacity: 0.95;
+}
+
+.reflux
+{
+	/*retour au fil de la page */
+	clear: both;
+}
+
+.btn
+{
+	display: inline-block;
+	border-style: solid;
+	padding: 1% 2% 1% 2%;
+	border-radius: 10px;
+	text-decoration: none;
+}
+.btn:hover /*le hover de tout les boutons */
+{
+	box-shadow: 3px 3px 0px grey;
+	color:black;
+}
+
+.btn-success
+{
+	/* couleur */
+	color:white;
+	background-color: green;
+	border-color: green;
+}
+
+.btn-edit
+{
+	/* couleur */
+	color:white;
+	background-color: orange;
+	border-color: orange;
+}
+
+.btn-download
+{
+	/* couleur */
+	color:white;
+	background-color: blue;
+	border-color: blue;
+}
+
+.colum
+{
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap-reverse;
+}
+.left-colum
+{
+	flex:1;
+	min-width: 250px;
+	width: 35.5%;
+	background-color:lightgrey;
+	border-style: ridge;
+	border-radius: 50px;
+	min-height: 285px;
+	padding: 1%;
+}
+
+.center-colum
+{
+	flex:1;
+	width: 24%;
+	margin:1%;
+	min-width: 200px;
+	max-width: 300px;
+	height: auto;
+}
+
+.poster
+{
+	width: 100%;
+}
+.right-colum
+{
+	flex:1;
+	width: 33.5%;
+	min-width: 250px;
+}
+
+.info
+{
+	min-height: 100px;
+	width: 100%;
+	background-color: lightgrey;
+	border-style: ridge;
+	border-radius: 50px;
+	margin-bottom: 1%;
+}
+.downtovideo
+{
+	margin-top: 4%;
+	margin-bottom: 10%;
+	border-color:black;
+}
+
+
+
+.stext
+{
+	display: inline-block;
+	margin-top: 5px;
+	background-color: grey;
+	border-color: black;
+	border-style: solid;
+	border-radius: 50px;
+	padding: 4px;
+	min-width: 8%;
+	border-width: 1px 1px 1px 1px;
+	cursor: pointer;
+}
+
+.stext2
+{
+	background-color: green;
+}
+
+.stext:hover
+{
+	background-color:#333333;
+	border-color: #333333;
+	color:white;
+}
+
+.stext:active
+{
+	background-color:blue;
+	border-color: blue;
+}
+.saison
+{
+	text-decoration:none;
+	color:black;
+}

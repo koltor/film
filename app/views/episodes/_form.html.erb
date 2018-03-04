@@ -1,0 +1,40 @@
+<div id="formul" style="display: block">
+  <%= form_for @episode ,  remote: true do |u| %>
+  
+  	<label>Titre</label>
+    <p><%= u.text_field :titre, class: 'form-control' %></p>
+    <label>Numero d'episode</label>
+   <p><%= u.text_field :num, class: 'form-control' %></p>
+
+     <label>Duree</label>
+    <p><%= u.text_field :duree, class: 'form-control' %></p>
+
+    <label>langue</label>
+    <p><%= u.text_field :langue, class: 'form-control' %></p>
+
+    <label>sous-titre</label>
+    <p><%= u.text_field :sous_titre, class: 'form-control' %></p>
+
+    <label>video</label>
+    <p><%= u.file_field :video, class: 'form-control' %></p>
+
+    <label>description de l'episode</label>
+    <p><%= u.text_area :description, class: 'form-control' %></p>
+
+    <%= hidden_field_tag(:id, @saison.id) %>
+
+     <%= hidden_field_tag(:saison_id, @saison.id) %>
+
+    <%= u.submit 'Valider', value:'valider', class: 'btn btn-primary' %>
+  <% end %>
+<button onclick="func()">hide</button>
+</div>
+<script>
+  function func()
+  {
+    t = document.getElementById('formul');
+    t.style.display = 'none';
+    t2 = document.getElementById('nvxe');
+    t2.style.display = 'block';
+  }
+</script>

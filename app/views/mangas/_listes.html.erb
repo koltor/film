@@ -1,0 +1,16 @@
+<h2>les Saisons</h2>
+<center>
+	<% @manga.saisons.each do |s| %>
+		<%= link_to  s.titre, saison_path(s.id), remote: true, class:"saison stext" ,id:s.id %>
+	<% end %>
+	<hr>
+	<div class="episode"></div>
+	<div id="nvxs" >
+		<%= form_tag new_saison_path, remote: true ,method: "get" do %>
+			<%= hidden_field_tag(:id, @manga.id) %>
+			<%= submit_tag("+", class:" saison stext stext2") %>
+		<% end %>
+	</div>
+	<div class="newsaison">
+	</div>
+</center>

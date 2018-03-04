@@ -1,0 +1,22 @@
+<div id="formulaire2" style="display: block">
+  <%= form_for @saison ,  remote: true do |u| %>
+  	<label>Titre</label>
+    <%= u.text_field :titre, class: 'form-control' %>
+
+    <%= hidden_field_tag(:id, @manga.id) %>
+
+     <%= hidden_field_tag(:manga_id, @manga.id) %>
+
+    <%= u.submit 'Valider', value:'valider', class: 'btn btn-primary' %>
+  <% end %>
+<button onclick="func2()">hide</button>
+</div>
+<script>
+  function func2()
+  {
+    tt = document.getElementById('formulaire2');
+    tt.style.display = 'none';
+    tt2 = document.getElementById('nvxs');
+    tt2.style.display = 'block';
+  }
+</script>

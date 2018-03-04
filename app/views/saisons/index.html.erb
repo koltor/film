@@ -1,0 +1,42 @@
+<script>
+	function showSaison(id)
+	{
+		t = document.getElementById(id);
+		if (t.style.display == 'flex'){
+			t.style.display = 'none'
+		}
+		else {
+			t.style.display = 'flex'
+		}
+	}
+</script>
+
+
+<head><title>Saisons</title></head>
+<center class="banniere-info-g"><h1>Les Saisons de toutes les Series</h1></center>
+<div class='general'>
+	<% @mangas.each do |m| %>
+		<div style="display: flex;flex-wrap: wrap;">
+			<% if m.saisons.count > 0 %>
+				<a onclick="showSaison(<%=m.id%>)"><center class="saison-titre">
+					<h2><%if m.titre?%><%= m.titre%><% else %><%= m.id %><% end %></h2>
+				</center></a>
+				<div class="saisons" id=<%= m.id %> style="display: none">
+					<% m.saisons.each do |s| %>
+						<div class="dropdown">
+							<h2 class="saison-count"><%= s.titre %>(<%=s.episodes.count%>)</h2>
+							<div class="dropdown-content">
+			    			<a href=<%= edit_saison_path(s.id)%>>Edit</a>
+			    			<a href=<%= manga_path(m.id)%>>Go</a>
+			    			<a href=<%= episodes_path %>>Episode</a>
+			    			<a href=<%= saison_path(s.id) %> rel="nofollow" data-remote="true" data-method="delete">Delete</a>
+			  			</div>
+			  		</div>
+					<% end %>
+				</div>
+			<% end %>
+		</div>
+	<% end %>
+</div>
+
+<center><a class="btn" href=<%= mangas_path %>>retour</a></center>

@@ -1,0 +1,30 @@
+<%= form_for @manga do |u| %>
+	<label>Titre</label>
+  <%= u.text_field :titre, class: 'form-control' %>
+
+  <label>Titre2</label>
+  <%= u.text_field :titre2,  class: 'form-control' %>
+
+  <label>description</label>
+  <%= u.text_area :description,  class: 'form-control' %>
+
+  <label>couleur</label>
+  <%= u.color_field :couleur,  class: 'form-control' %>
+
+  <label>Image</label>
+  <%= u.file_field :image, class: 'form-control' %>
+
+  <label>duree</label>
+  <%= u.text_field :duree, class: 'form-control' %>
+
+  <label>Annee</label>
+  <%= u.text_field :annee, class: 'form-control' %>
+
+   <label>Background</label>
+  <%= u.file_field :background, class: 'form-control' %>
+
+    <label>lien youtube</label>
+  <%= u.text_field :lien, class: 'form-control' %>
+
+  <%= u.submit 'Valider', value:'valider', class: 'btn btn-primary' %>
+<% end %>

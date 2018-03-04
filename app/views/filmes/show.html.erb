@@ -1,0 +1,96 @@
+<script>
+	function showAdd()
+	{
+		t = document.getElementById('annonce');
+		if (t.style.display == 'flex'){
+			t.style.display = 'none'
+		}
+		else {
+			t.style.display = 'flex'
+		}
+	}
+
+	function showFilm()
+	{
+		t = document.getElementById('film');
+		if (t.style.display == 'block'){
+			t.style.display = 'none'
+			document.getElementById('btnvideo').innerHTML = 'video'
+		}
+		else {
+			t.style.display = 'block'
+			document.getElementById('btnvideo').innerHTML = 'cacher'
+		}
+	}
+</script>
+<head><title><% if @film.titre? %><%= @film.titre %><% else %>Film<% end %></title></head>
+<body style="<% if @film.background? %> background-image: url(<%= @film.background_url %>)<% else %>background-image: url(<%= asset_path 'default-background.jpg' %>)<% end %> ;background-repeat: no-repeat;background-size: cover;">
+	<center class="banniere-info-g" style="color:<%= @film.couleur %>;">
+		<h1><%= @film.titre%></h1>
+		<% if @film.lien? %><span class="teaser" onclick="showAdd()">teaser</span><% end %>
+	</center>
+
+	<center id="annonce" style="display: none;justify-content: center;">
+	<% if @film.lien? %> 
+		<iframe width="640" height="340" src=<%= @film.lien %> frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	<% end %>
+	</center>
+	<center id="film" style="display: none">
+			<video id="video" src=<%= @film.video_url %> width="1000" height="560" controls poster=<%= @film.image_url(:video) %>>Votre navigateur ne supporte pas le tag de la video</video>
+			<hr class="downtovideo"/>
+	</center>
+	<center class="colum">
+		<div class="left-colum">
+				<center>
+					<h1>Synopsis</h1>
+					<% if @film.description? %><%= @film.description %><% end %>
+				</center>
+		</div>
+		<div class="center-colum">
+			<% if @film.image? %>
+				<img class="poster" src=<%= @film.image_url(:poster) %> />
+			<% else %>
+				<img class="poster" src=<%= asset_path 'default-affiche-film.jpg' %>/>
+			<% end %>
+		</div>
+		<div class="right-colum">
+			<table class="info">
+				<tr>
+					<th><h1>titre </h1></th>
+					<td align="center"><% if @film.titre2? %><h1><%= @film.titre2 %></h1><% else %><h1>Undefined</h1><% end %></td>
+				</tr>
+				<tr>
+					<th><h2>langue</h2></th>
+					<td align="center"><% if @film.langue? %><h2><%= @film.langue %></h2><% else %><h2>Undefined</h2><% end %></td>	
+				</tr>
+
+				<tr>
+					<th><h3>sous-titre</h3></th>
+					<td align="center"><% if @film.sous_titre? %><h3><%= @film.sous_titre %></h3><% else %><h3>Undefined</h3><% end %></td>	
+				</tr>
+				<tr>
+					<th><h4>date de sortie</h4></th>
+					<td align="center"><% if @film.annee? %><h4><%= @film.annee %></h4><% else %><h4>Undefined</h4><% end %></td>
+				</tr>
+				<tr>
+					<th><h5>durée du film</h5></th>
+					<td align="center"><% if @film.duree? %><h5><%= @film.duree %></h5><% else %><h5>Undefined</h5><% end %></td>		
+				</tr>
+			</table>
+		</div>
+	</center>
+
+	<center>
+		<br/>
+		<div>
+			<a class="btn" href=<%= filmes_path %>>retour</a>
+			<a class="btn" href=<%= edit_filme_path(@film.id) %>>edit</a>
+			<%= link_to 'Delete', @film, method: :delete,class:"btn ",  data: { confirm: 'Sur ?' } %>
+			<br><br><br>
+			<% if @film.video? %>
+				<a class="btn btn-success" id="btnvideo" onclick="showFilm()">Video</a>
+				<a class="btn btn-download" href=<%= @film.video_url%>>Download</a>
+			<% end %>
+		</div>
+	</center>
+</body>

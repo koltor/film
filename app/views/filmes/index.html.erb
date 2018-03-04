@@ -1,0 +1,19 @@
+ <title>Films</title>
+<body style="background-image: url(<%= asset_path 'fond.jpg' %>);background-repeat: no-repeat;background-size: cover;">
+	<center class="banniere-info-g"><h1>Listes des differents films</h1></center>
+	<% @films.each do |f| %>
+		<a href=<%= filme_path(f.id) %> >
+			<center class='card' style="background-color: <%= f.couleur%>">
+				<h3 style ="min-height:70px"><% if f.titre? %><%= f.titre %><% else %>Undefined<% end %></h3>
+				<div style="min-height: 155px;">
+					<% if f.image? %><img src=<%= f.image_url(:mini) %> /><% else %><img width="100px" height="150px" src=<%= asset_path 'default-affiche-film.jpg' %>/><% end %>
+				</div>
+				<div style="min-height: 20px; display: inline-block;"><%= f.langue %></div>
+			</center>
+		</a>
+	<% end %>
+	<hr class="reflux"/>
+	<center><a href=<%= new_filme_path %> class="btn btn-success" id="ancre">new</a></center>
+	<br>
+	<center><a href=<%= home_path %> class="btn">retour</a></center>
+</body>

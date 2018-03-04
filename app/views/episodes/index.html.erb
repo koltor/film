@@ -1,0 +1,5 @@
+<% @episodes.each do |u| %>
+	<p><%= u.titre %></p>
+	<%= link_to 'Delete', u, method: :delete,class:"btn " %>
+<% end %>
+<center><a class="btn" href=<%= mangas_path %>>retour</a></center>

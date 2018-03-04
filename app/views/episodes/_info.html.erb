@@ -1,0 +1,32 @@
+<h2 style="position: absolute;border-style: solid;border-width: 2px;border-radius: 30px;padding:0.5%;right: 3%;min-width: 25px;"><%= @episode.num %></h2>
+<table>
+	<tr>
+		<td style=" font-style:italic;"><% if  @saison.titre %><h1><%= @saison.titre %></h1><% end %></td>	
+	</tr>
+</table>
+<table>
+	<th><h4>titre de l'episode</h4></th>
+	<td width="10%"></td>
+		<td style=" font-style:italic;color: #4f0141"><% if @episode.titre != "" %><h4><%= @episode.titre %></h4><% else %><h4><%= @episode.num %></h4><% end %></td>
+	</tr>
+</table>
+<table>
+	<tr>
+		<th><h4>langue</h4></th>
+		<td width="5%"></td>
+		<td style=" font-style:italic;color: #4f0141"><% if (@episode.langue != "" && @episode.langue != nil) %><h4><%= @episode.langue %></h4><% else %><h4>undefined</h4><% end %></td>
+		<td width="5%"></td>
+		<th><h4>sous-titre</h4></th>
+		<td width="5%"></td>
+		<td style=" font-style:italic;color: #4f0141"><% if (@episode.sous_titre != "" && @episode.sous_titre != nil) %><h4><%= @episode.sous_titre %></h4><% else %><h4>undefined</h4><% end %></td>
+	</tr>
+</table>
+<table>
+	<tr>
+		<th><h5>durée de l'episode</h5></th>
+		<td width="10%"></td>
+		<td style=" font-style:italic;color: #4f0141"><% if (@episode.duree !="" && @episode.duree != nil) %><h5><%= @episode.duree %></h5><% else %><h5>undefined</h5><% end %></td>		
+	</tr>
+</table>
+<% if @episode.video? %><a class="btn btn-success" id="btnvideo" onclick="showVideo()">Video</a><% end %>
+<a class="btn btn-edit" href=<%= edit_episode_path(@episode.id) %> data-remote="true">edit</a>

@@ -1,0 +1,88 @@
+<script>
+	function showAdd()
+	{
+		t = document.getElementById('annonce');
+		if (t.style.display == 'flex'){
+			t.style.display = 'none'
+		}
+		else {
+			t.style.display = 'flex'
+		}
+	}
+
+	function showVideo()
+	{
+		t = document.getElementById('episode');
+		if (t.style.display == 'flex'){
+			t.style.display = 'none'
+		}
+		else {
+			t.style.display = 'flex'
+		}
+	}
+</script>
+<head><title><% if @manga.titre? %><%= @manga.titre %><% else %>Serie<% end %></title></head>
+<body  style="<% if @manga.background? %>background-image: url(<%= @manga.background_url %>)<% else %>background-image: url(<%= asset_path 'default-background.jpg' %>)<% end %> ;background-repeat: no-repeat;background-size: cover;" >
+	<center class="banniere-info-g" style="color:<%= @manga.couleur %>;">
+		<h1><%= @manga.titre%></h1>
+		<% if @manga.lien? %><span class="teaser" onclick="showAdd()">teaser</span><% end %>
+	</center>
+
+	<center id="annonce" style="display: none;justify-content: center;">
+	<% if @manga.lien? %> 
+		<iframe width="640" height="340" src=<%= @manga.lien %> frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	<% end %>
+	</center>
+	<center id="episode" style="display: none;justify-content: center;"></center>
+
+	<center class="colum">
+		<div class="left-colum">
+				<center>
+					<h1>Synopsis</h1>
+					<% if @manga.description? %><%= @manga.description %><% end %>
+				</center>
+		</div>
+		<div class="center-colum">
+			<% if @manga.image? %>
+				<img class="poster" src=<%= @manga.image_url(:poster) %> />
+			<% else %>
+				<img class="poster" src=<%= asset_path 'serie-default-affiche.png' %> />
+			<% end %>
+		</div>
+		<div class="right-colum flex-colum">
+			<div class="info" id="info">
+					<table>
+					<tr>
+						<th><h1>titre </h1></th>
+						<td align="center"><% if @manga.titre? %><h1><%= @manga.titre %></h1><% else %><h1>undefined<h1><% end %></td>
+					</tr>
+					<tr>
+						<th><h2>date de sortie</h2></th>
+						<td align="center"><% if @manga.annee? %><h2><%= @manga.annee %></h2><% else %><h2>undefined<h12><% end %></td>	
+					</tr>
+
+					<tr>
+						<th><h3>nombre de saisons</h3></th>
+						<td align="center"><h3><%= @manga.saisons.count %></h3></td>	
+					</tr>
+					<tr>
+						<th><h4>duree total</h4></th>
+						<td align="center"><h4><% if @manga.duree? %><%= @manga.duree %></h4><% else %><h4>undefined<h4><% end %></td>
+					</tr>
+				</table>
+			</div>
+			<div class="info" id='saisons'>
+				<%= render 'mangas/listes' %>
+			</div>
+		</div>
+	</center>
+
+	<center>
+		<br/>
+		<div>
+			<a class="btn" href=<%= mangas_path %>>retour</a>
+			<a class="btn" href=<%= edit_manga_path(@manga.id) %>>edit</a>
+			<%= link_to 'Delete', @manga, method: :delete,class:"btn ",  data: { confirm: 'Sur ?' } %>
+		</div>
+	</center>
+</body>
