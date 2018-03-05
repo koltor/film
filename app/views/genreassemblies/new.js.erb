@@ -1,0 +1,6 @@
+<% if @type == 'film' %>
+	$('.genres').html("<%= j render 'generaleFilm' %>");
+<% else %>
+	$('.genres').html("<%= j render 'generaleManga' %>");
+<% end %>
+	$('.select-genre').html("<%= j render 'genres/index' %>");

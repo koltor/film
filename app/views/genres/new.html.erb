@@ -1,0 +1,10 @@
+	<head><title>creation d'un genre</title></head>
+	<center>
+	<h1 class="banniere-info-g">Creation d'un Genre</h1>
+	<%= form_for @genre do |u| %>
+	  <label>Nom du genre :</label>
+	  <p><%= u.text_field :contenu, class: 'form-control' %></p>
+
+	  <%= u.submit 'Valider', value:'valider', class: 'btn btn-primary' %>
+	<% end %>
+</center>

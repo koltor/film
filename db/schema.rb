@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180303123308) do
+ActiveRecord::Schema.define(version: 20180305201729) do
 
   create_table "episodes", force: :cascade do |t|
     t.string "titre"
@@ -41,6 +41,23 @@ ActiveRecord::Schema.define(version: 20180303123308) do
     t.string "background"
     t.string "video"
     t.string "lien"
+  end
+
+  create_table "genreassemblies", force: :cascade do |t|
+    t.integer "genre_id"
+    t.integer "filme_id"
+    t.integer "manga_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["filme_id"], name: "index_genreassemblies_on_filme_id"
+    t.index ["genre_id"], name: "index_genreassemblies_on_genre_id"
+    t.index ["manga_id"], name: "index_genreassemblies_on_manga_id"
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "contenu"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "mangas", force: :cascade do |t|

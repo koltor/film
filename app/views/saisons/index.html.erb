@@ -26,7 +26,7 @@
 						<div class="dropdown">
 							<h2 class="saison-count"><%= s.titre %>(<%=s.episodes.count%>)</h2>
 							<div class="dropdown-content">
-			    			<a href=<%= edit_saison_path(s.id)%>>Edit</a>
+			    			<a href=<%= edit_saison_path(s.id)%> data-remote="true">Edit</a>
 			    			<a href=<%= manga_path(m.id)%>>Go</a>
 			    			<a href=<%= episodes_path %>>Episode</a>
 			    			<a href=<%= saison_path(s.id) %> rel="nofollow" data-remote="true" data-method="delete">Delete</a>
@@ -38,5 +38,5 @@
 		</div>
 	<% end %>
 </div>
-
+<center id="edit"></center>
 <center><a class="btn" href=<%= mangas_path %>>retour</a></center>

@@ -1,0 +1,12 @@
+				<h1>Genres</h1>
+				<div style="display: flex; justify-content: center; flex-wrap: wrap;">
+				<%  @genrelist.where(filme_id: @film.id).each do |g| %>
+						<h4 style="padding: 2%;"><%= Genre.find_by_id(g.genre_id).contenu %></p></h4>
+				<% end %>
+				</div>
+					<%= form_tag genres_path, remote: true ,method: "get" do %>
+						<%= hidden_field_tag(:id, @film.id) %>
+						<%= hidden_field_tag(:type, 'film') %>
+					<%= submit_tag("ajouter", class:" btn btn-success") %>
+				<% end %>
+				<div class="select-genre"></div>

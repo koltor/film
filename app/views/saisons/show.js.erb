@@ -1,6 +1,6 @@
 $('#saisons').html("<%= j render 'mangas/listes' %>");
-$('#<%= @saison.id %>').css('background-color','blue');
+$('#<%= @saison.titre %>').css('background-color','blue');
 $('.episode').html("<%= j render 'show' %>");
 
 $('#info').html("<%= j render 'info' %>");
-$('.left-colum').html("<%= j render 'sysnopsis' %>");
+$('.sysnopsis').html("<%= j render 'sysnopsis' %>");

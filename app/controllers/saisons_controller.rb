@@ -49,6 +49,10 @@ class SaisonsController < ApplicationController
     @saison = Saison.find(params[:id])
     @saison.update(saison_params)
     redirect_to saisons_path
+    respond_to do |f|
+      f.js
+      f.html 
+    end
    end
 
  	 def destroy

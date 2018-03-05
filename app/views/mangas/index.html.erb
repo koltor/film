@@ -1,5 +1,5 @@
 <head><title>Series</title></head>
-<body style="background-image: url(<%= asset_path 'fond.jpg' %>);background-repeat: no-repeat;background-size: cover;">
+<body style="background-image: url(<%= asset_path 'fond.jpg' %>);background-repeat:repeat;background-size: cover;">
 	<center class="banniere-info-g"><h1>Listes des differentes serie</h1></center>
 	<% @mangas.each do |f| %>
 		<a href=<%= manga_path(f.id) %> >

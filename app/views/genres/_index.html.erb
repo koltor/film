@@ -1,0 +1,56 @@
+<div id="select">
+	<div style="display: flex	;justify-content: center; align-items: center;flex-wrap: wrap;">
+		<% @genres.each do |g|%>
+			<h4><p><%= g.contenu %></p><h4>
+			<div style=" margin-right: 20px">
+				<%= form_tag new_genreassembly_path , remote: true ,method: "get" do %>
+
+					<% if @type == "film" %>
+						<%= hidden_field_tag(:filme_id, @video.id) %>
+						<%= hidden_field_tag(:manga_id, "") %>
+					<% else %>
+						<%= hidden_field_tag(:filme_id, "") %>
+						<%= hidden_field_tag(:manga_id, @video.id) %>
+					<% end %>
+					<% deja = false %>
+					<%= hidden_field_tag(:genre_id, g.id) %>
+					<% @genre_list.each do |gl| %>
+						<% if gl.genre_id == g.id %>
+							<%= hidden_field_tag(:style, " - ") %>
+							<%= submit_tag(" - ", class:" btn btn-danger") %>
+							<% deja = true %>
+							<% break %>
+						<% end %>
+					<% end %>
+					<% if deja == false%>
+						<%= hidden_field_tag(:style, " + ") %>
+						<%= submit_tag(" + ", class:" btn btn-success") %>
+					<% end %>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+		<form action="/genreassemblies/new" accept-charset="UTF-8" data-remote="true" method="get"><input name="utf8" type="hidden" value="✓">
+			<% if @type == "film" %>
+				<input type="hidden" name="filme_id" id="filme_id" value=<%= @video.id %>>
+				<input type="hidden" name="style" id="style" value="reset">
+				<input type="hidden" name="manga_id" id="manga_id" value=<%= "" %>>
+			<% else %>
+				<input type="hidden" name="filme_id" id="filme_id" value=<%= "" %>>
+				<input type="hidden" name="style" id="style" value="reset">
+				<input type="hidden" name="manga_id" id="manga_id" value=<%= @video.id %>>
+			<% end %>
+			<input type="submit" name="commit" value="reset" class=" btn btn-danger" data-disable-with="reset">
+		</form>
+		<br>
+		<a class="btn" onclick="hide()">terminé</a>
+<div>
+
+<script>
+	function hide()
+	{
+		t = document.getElementById('select');
+		t.style.display = 'none'
+
+	}
+</script>

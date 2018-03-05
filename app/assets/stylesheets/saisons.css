@@ -64,3 +64,18 @@
     display: block;
 
 }
+
+#edit
+{
+	padding: 1%;
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	top:15%;
+	min-height: 150px; 
+	min-width: 250px;
+	background-color: #eeeeee;
+	border-style: solid;
+	border-radius: 20px;
+	border-width: 2px;
+}

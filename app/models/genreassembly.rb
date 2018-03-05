@@ -1,0 +1,2 @@
+class Genreassembly < ApplicationRecord
+end

@@ -1,6 +1,7 @@
 class FilmesController < ApplicationController
   def show
   	@film = Filme.find(params[:id])
+    @genrelist = Genreassembly.all()
   end
 
   def index

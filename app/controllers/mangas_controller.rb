@@ -2,6 +2,7 @@ class MangasController < ApplicationController
  
    def show
   	@manga = Manga.find(params[:id])
+    @genrelist = Genreassembly.all()
   end
 
   def index
