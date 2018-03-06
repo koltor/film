@@ -27,6 +27,10 @@
 		<h1><%= @manga.titre%></h1>
 		<% if @manga.lien? %><span class="teaser" onclick="showAdd()">teaser</span><% end %>
 	</center>
+		<center class="nav-next-prev">
+		<% if @manga.prev.presence %><%= link_to "Previous Serie", manga_path(@manga.prev), class:"btn" %> <% end %>
+		<% if @manga.next.presence %> <%= link_to "Next Serie", manga_path(@manga.next), class:"btn" %><% end %>
+	</center>
 
 	<center id="annonce" style="display: none;justify-content: center;">
 	<% if @manga.lien? %> 

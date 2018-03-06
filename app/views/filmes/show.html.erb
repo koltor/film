@@ -29,6 +29,10 @@
 		<h1><%= @film.titre%></h1>
 		<% if @film.lien? %><span class="teaser" onclick="showAdd()">teaser</span><% end %>
 	</center>
+	<center class="nav-next-prev">
+		<% if @film.prev.presence %><%= link_to "Previous Film", filme_path(@film.prev), class:"btn" %> <% end %>
+		<% if @film.next.presence %> <%= link_to "Next Film", filme_path(@film.next), class:"btn" %><% end %>
+	</center>
 
 	<center id="annonce" style="display: none;justify-content: center;">
 	<% if @film.lien? %> 
