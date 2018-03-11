@@ -8,8 +8,8 @@ class FilmesController < ApplicationController
   	a =  params[:genre]
     @films = Filme.all
     @genres = Genre.all
-    @replique = Replique.all
-    @replique = @replique.shuffle.first
+    @repliques = Replique.all
+    @replique = @repliques.shuffle.first
 
     genrelist = Genreassembly.where(genre_id: a , manga_id: nil)
     @gselect = 0

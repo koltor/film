@@ -1,0 +1,21 @@
+
+  <%= form_for @user do |u| %>
+  <div class="form">
+  	<label>Pseudo</label>
+    <%= u.text_field :pseudo, class: 'form-control' %>
+    <label>password</label>
+    <%= u.password_field :password,  class: 'form-control' %>
+    <label>password confirm</label>
+    <%= u.password_field :password,  class: 'form-control' %>
+    <label>status</label>
+    <select name="status" id="status">
+      <option value="1">visiteur</option>
+      <option value="2">Connecté</option>
+      <option value="3">Edition</option>
+      <option value="3">Admin</option>
+    </select>
+    <label>Image</label>
+    <%= u.file_field :avatar %>
+    <%= u.submit 'Valider', value:'valider', class: 'btn btn-primary' %>
+    </div>
+  <% end %>

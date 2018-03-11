@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   delete '/series/:id' 	,to: 'mangas#destroy'
 
   root to: 'static_pages#index', as:'home'
+  get '/admin',to: 'static_pages#admin' , as:'admin'
   get '*path', to: 'static_pages#erreur404'#erreur 404
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

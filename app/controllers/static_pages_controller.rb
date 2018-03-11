@@ -4,4 +4,7 @@ class StaticPagesController < ApplicationController
 
   def erreur404
   end
+
+  def admin
+  end
 end

@@ -1,2 +1,6 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<body style="background-image: url(<%= asset_path 'asterixCleopatre.jpeg'%>)">
+	<center class="banniere-info-g" style="display: flex ;justify-content: space-around; margin-bottom: 5%; opacity: 0.9"><h1 style="align-self: center">Alle viens ! Rejoins-nous !</h1><img src=<%= asset_path 'mascotte' %>></center>
+	<center style="display: flex; justify-content: center; opacity: 0.95;">
+		<%= render 'form' %>
+	</center>
+</body>

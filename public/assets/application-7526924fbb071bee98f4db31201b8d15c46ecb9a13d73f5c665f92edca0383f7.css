@@ -1,0 +1,496 @@
+.card
+{
+	/* couleur (dans le code direct)*/ 
+	/* position */
+		display: inline-block;
+		float: left;
+		margin-right: 4px;
+		margin-bottom: 4px;
+
+	/* securite (par default) */
+		width: 150px;
+
+	/* les bordures */
+		border-style: ridge;
+		border-width: 1px;
+		border-radius: 3px;
+
+	/* les ombres */
+	-webkit-box-shadow: 3px 3px 0px grey;
+	        box-shadow: 3px 3px 0px grey;
+}
+
+.card:hover /*le hover de la carte */
+{
+	-webkit-box-shadow: 3px 3px 3px 3px grey;
+	        box-shadow: 3px 3px 3px 3px grey;
+	opacity: 0.95;
+}
+
+.reflux
+{
+	/*retour au fil de la page */
+	clear: both;
+}
+
+.btn
+{
+	display: inline-block;
+	border-style: solid;
+	padding: 1% 2% 1% 2%;
+	border-radius: 10px;
+	text-decoration: none;
+}
+.btn:hover , .btn:focus/*le hover de tout les boutons */
+{
+	-webkit-box-shadow: 3px 3px 0px grey;
+	        box-shadow: 3px 3px 0px grey;
+	color:black;
+}
+
+.btn-success
+{
+	/* couleur */
+	color:white;
+	background-color: green;
+	border-color: green;
+}
+
+.btn-edit
+{
+	/* couleur */
+	color:white;
+	background-color: orange;
+	border-color: orange;
+	margin-bottom: 1%;
+}
+
+.btn-danger
+{
+	/* couleur */
+	color:white;
+	background-color: red;
+	border-color: red;
+}
+
+.btn-download
+{
+	/* couleur */
+	color:white;
+	background-color: blue;
+	border-color: blue;
+}
+
+.colum
+{
+		display:-webkit-box;
+		display:-ms-flexbox;
+		display:flex;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		-ms-flex-wrap: wrap-reverse;
+		    flex-wrap: wrap-reverse;
+}
+.left-colum
+{
+	-webkit-box-flex:1;
+	    -ms-flex:1;
+	        flex:1;
+	min-width: 250px;
+	width: 35.5%;
+}
+
+.sysnopsis
+{
+	min-width: 250px;
+	width: 100%;
+	background-color:lightgrey;
+	border-style: ridge;
+	border-radius: 50px;
+	min-height: 285px;
+	padding: 1%;
+	margin-bottom: 1%;
+}
+
+.genres
+{
+	display: inline-block;
+	min-width: 250px;
+	width: 100%;
+	background-color:lightgrey;
+	border-style: ridge;
+	border-radius: 50px;
+	min-height: 100px;
+	padding: 1%;
+}
+
+.center-colum
+{
+	-webkit-box-flex:1;
+	    -ms-flex:1;
+	        flex:1;
+	width: 24%;
+	margin:1%;
+	min-width: 200px;
+	max-width: 300px;
+	height: auto;
+}
+
+.poster
+{
+	width: 100%;
+}
+.right-colum
+{
+	-webkit-box-flex:1;
+	    -ms-flex:1;
+	        flex:1;
+	width: 33.5%;
+	min-width: 250px;
+}
+
+.info
+{
+	min-height: 100px;
+	width: 100%;
+	background-color: lightgrey;
+	border-style: ridge;
+	border-radius: 50px;
+	margin-bottom: 1%;
+}
+.downtovideo
+{
+	margin-top: 4%;
+	margin-bottom: 10%;
+	border-color:black;
+}
+
+
+
+.stext
+{
+	display: inline-block;
+	margin-top: 5px;
+	background-color: grey;
+	border-color: black;
+	border-style: solid;
+	border-radius: 50px;
+	padding: 4px;
+	min-width: 8%;
+	border-width: 1px 1px 1px 1px;
+	cursor: pointer;
+}
+
+.stext2
+{
+	background-color: green;
+}
+
+.stext:hover
+{
+	background-color:#333333;
+	border-color: #333333;
+	color:white;
+}
+
+.stext:active
+{
+	background-color:blue;
+	border-color: blue;
+}
+.saison
+{
+	text-decoration:none;
+	color:black;
+}
+
+.area-description
+{
+	width: 99%;
+	height: 270px;
+	border-radius: 10px;
+	resize:none;
+}
+
+.filtre-genre
+{
+	position: absolute;
+	right: 1%;
+	top: 10%;
+}
+
+.replique h1
+{
+	font-size: 150%;
+}
+
+.type
+{
+	position: absolute;
+	font-weight: bold;
+	color: white;
+	font-size: 200%;
+	left: 1%;
+	top: 4%;
+}
+.saison-titre
+{
+	margin-right: 10px;
+	margin-bottom: 10px;
+	min-width: 100px;
+	background-color: white;
+	padding: 1%;
+	border-style: outset;
+	border-width: 2px;
+	cursor: pointer;
+}
+.saisons
+{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	height: 100%;
+}
+.saison-count
+{
+	display: inline-block;
+	height: 100%; 
+	min-width: 100px;
+	background-color: lightblue;
+	border-style: outset;
+	border-width: 2px;
+	cursor: pointer;
+}
+
+.saison-count:hover
+{
+	-webkit-box-shadow: 0px 3px 3px 0px grey;
+	        box-shadow: 0px 3px 3px 0px grey;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    -webkit-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {color: blue}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+
+}
+
+#edit
+{
+	padding: 1%;
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	top:15%;
+	min-height: 150px; 
+	min-width: 250px;
+	background-color: #eeeeee;
+	border-style: solid;
+	border-radius: 20px;
+	border-width: 2px;
+}
+.films-select
+{
+	-ms-flex-item-align: center;
+	    align-self: center;
+	width: 50%;
+	height: 100%;
+}
+
+.series-select
+{
+	-ms-flex-item-align: center;
+	    align-self: center;
+	width: 50%;
+	height: 100%;
+}
+
+.films-select:hover
+{
+	background:image-url('film-acceuil.jpg');
+}
+
+.series-select:hover
+{
+	background:image-url('serie-acceuil.jpg');
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+
+.banniere-info-g
+{
+	/* couleur */
+	background-color: lightgrey;
+	/* position*/
+	position: relative;
+	margin-bottom:5px;
+
+	min-height: 80px;/* securité (par default)*/
+
+	/* les bordures*/
+	border-style: solid;
+	border-bottom-width: 1px;
+	-webkit-box-shadow: 3px 3px 0px grey;
+	        box-shadow: 3px 3px 0px grey;
+}
+
+a
+{
+	cursor: pointer;
+}
+
+.teaser
+{
+	/* position*/
+	position: absolute;
+	right: 0;
+	top: 0;
+
+	/* les bordures*/
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 30px;
+  padding: 0.5%;
+
+  /* le curseur*/
+  cursor: pointer;
+}
+
+.all-video
+{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.btn-films
+{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	top: 0;
+	right: 50%;
+	border-style: solid;
+	border-width: 0px 1% 1% 0px;
+	border-color: grey;
+	padding-bottom: 50%;
+	opacity: 0.9;
+}
+
+
+
+.btn-series:hover, .btn-films:hover
+{
+		cursor: pointer;
+		opacity: 1;
+}
+
+.btn-films h1 ,.btn-series h1
+{
+	text-decoration:none;
+	color: lightblue;
+	margin-top: 50%;
+	font-size: 600%;
+}
+.btn-series
+{
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	top: 0;
+	right: 0;
+	border-style: solid;
+	border-width: 0px 1% 1% 0px;
+	border-color: grey;
+	opacity: 0.9;
+}
+
+
+
+.form
+{
+	min-width: 150px;
+	border-style: inset;
+	background-color: #EEEEEE;
+	-webkit-box-shadow: 5px 2px 2px lightgrey;
+	        box-shadow: 5px 2px 2px lightgrey; 
+	border-radius: 5px;
+	border-width: 1px;
+	padding: 2%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+
+.form-control
+{
+	border-style: ridge;
+	border-radius: 5px;
+	border-width: 1px;
+	-webkit-box-shadow: 5px 2px 2px lightgrey;
+	        box-shadow: 5px 2px 2px lightgrey; 
+}
+
+.form-control:focus
+{
+	border-radius: 10px;
+	-webkit-box-shadow: 10px 6px 6px grey;
+	        box-shadow: 10px 6px 6px grey; 
+}

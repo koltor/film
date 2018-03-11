@@ -3,8 +3,10 @@
 	<center class="banniere-info-g" style="	background-image: url('https://thumbs.dreamstime.com/t/fundo-ou-textura-cinzenta-da-parede-do-grunge-35766309.jpg');position: fixed; left:0; top:0; right: 0; z-index: 10 ">
 		<span class="type">films</span>
 		<div class="replique">
-			<h1><%= @replique.corps %></h1>
-			<div style="margin-left: 12%"><%= @replique.source %></div>
+			<% if @repliques.count > 0 %>
+		      <h1><%= @replique.corps %></h1>
+			  <div style="margin-left: 12%"><%= @replique.source %></div>
+			<% end %>
 		</div>
 		<span class="filtre-genre">
 			<form id="form1" action='<%= filmes_path %>' accept-charset="UTF-8" method="get">

@@ -39,7 +39,7 @@
 	border-radius: 10px;
 	text-decoration: none;
 }
-.btn:hover /*le hover de tout les boutons */
+.btn:hover , .btn:focus/*le hover de tout les boutons */
 {
 	box-shadow: 3px 3px 0px grey;
 	color:black;

@@ -1,0 +1,42 @@
+.films-select
+{
+	color:white;
+	text-decoration: none;
+	background-color: grey;
+	align-self: center;
+	width: 50%;
+	height: 100%;
+}
+
+.series-select
+{
+	color:white;
+	text-decoration: none;
+	background-color: grey;
+	align-self: center;
+	width: 50%;
+	height: 100%;
+}
+
+.films-select:hover
+{
+	background-image:url('film-acceuil.jpg');
+}
+
+.series-select:hover
+{
+	background-image:url('serie-acceuil.jpg');
+}
+
+.user-g
+{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.user-profile
+{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}

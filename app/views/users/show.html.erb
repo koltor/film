@@ -1,2 +1,11 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class='banniere-info-g' style="display: flex ;justify-content: space-around; margin-bottom: 5%">
+	<a href=<%= filmes_path %> class='films-select'><center><h1>films</h1></center></a>
+	<a href=<%= series_path %> class='series-select'><center><h1>series</h1></center></a>
+</div>
+<div class="user-g">
+	<div class="user-profile">
+		<img style="border-radius: 100%" width= "100px" src=<%= @user.avatar %> alt="avatar">
+		<%= @user.pseudo %>
+		<%= @user.status %>
+	</div>
+</div>
