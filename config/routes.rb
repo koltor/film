@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
-  get 'genre_assemblies/create'
-
   resources :filmes
   resources :saisons
   resources :episodes
   resources :genres
   resources :genreassemblies
+  resources :repliques
+  resources :users
 
   get '/series' ,to: 'mangas#index' ,as:'mangas'
   post '/series' ,to: 'mangas#create'

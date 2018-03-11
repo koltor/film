@@ -19,12 +19,11 @@
 {
 	/* couleur */
 	background-color: lightgrey;
-
 	/* position*/
 	position: relative;
 	margin-bottom:5px;
 
-	min-height: 50px;/* securité (par default)*/
+	min-height: 80px;/* securité (par default)*/
 
 	/* les bordures*/
 	border-style: solid;

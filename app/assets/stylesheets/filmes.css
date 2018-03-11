@@ -191,3 +191,33 @@
 	text-decoration:none;
 	color:black;
 }
+
+.area-description
+{
+	width: 99%;
+	height: 270px;
+	border-radius: 10px;
+	resize:none;
+}
+
+.filtre-genre
+{
+	position: absolute;
+	right: 1%;
+	top: 10%;
+}
+
+.replique h1
+{
+	font-size: 150%;
+}
+
+.type
+{
+	position: absolute;
+	font-weight: bold;
+	color: white;
+	font-size: 200%;
+	left: 1%;
+	top: 4%;
+}

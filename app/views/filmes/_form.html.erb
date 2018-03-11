@@ -1,41 +1,63 @@
-<div class="form">
+<center class="form">
   <%= form_for @film do |u| %>
-  	<label>Titre</label>
-    <%= u.text_field :titre, class: 'form-control' %>
+    <center class="banniere-info-g">
+      <h1>
+        <label>Titre</label>
+        <%= u.text_field :titre, class: 'form-control' %>  
+      </h1>
+    </center>
 
-    <label>Titre2</label>
-    <%= u.text_field :titre2,  class: 'form-control' %>
+    <center class="colum">
 
-    <label>description</label>
-    <%= u.text_area :description,  class: 'form-control' %>
+      <div class="left-colum">
+        <center class="sysnopsis">
+          <h1><label>description</label></h1>
+          <p><%= u.text_area :description,  class: 'form-control area-description' %></p>
+        </center>
+      </div>
 
-    <label>couleur</label>
-    <%= u.color_field :couleur,  class: 'form-control' %>
+      <div class="center-colum">
+        <label>Couleur</label>
+        <p><%= u.color_field :couleur,  class: 'form-control' %></p>
+        <label>lien youtube</label>
+        <p><%= u.text_field :lien, class: 'form-control' %></p>
+        <label>Image</label>
+        <p><%= u.file_field :image, class: 'form-control' %></p>
+        <label>Background</label>
+        <p><%= u.file_field :background, class: 'form-control' %></p>
+        <label>Video</label>
+        <p><%= u.file_field :video, class: 'form-control' %></p>
+      </div>
 
-    <label>langue</label>
-    <%= u.text_field :langue, class: 'form-control' %>
+      <div class="right-colum">
+        <table class="info">
+          <tr>
+            <th><h1>Titre2</h1></th>
+            <td align="center"><h1><%= u.text_field :titre2,  class: 'form-control' %></h1></td>
+          </tr>
+          <tr>
+            <th><h2>langue</h2></th>
+            <td align="center"><h2><%= u.text_field :langue, class: 'form-control' %></h2></td> 
+          </tr>
 
-     <label>sous titre</label>
-    <%= u.text_field :sous_titre, class: 'form-control' %>
-
-    <label>Image</label>
-    <%= u.file_field :image, class: 'form-control' %>
-
-    <label>duree</label>
-    <%= u.text_field :duree, class: 'form-control' %>
-
-    <label>Annee</label>
-    <%= u.text_field :annee, class: 'form-control' %>
-
-     <label>Background</label>
-    <%= u.file_field :background, class: 'form-control' %>
-
-      <label>Video</label>
-    <%= u.file_field :video, class: 'form-control' %>
-
-      <label>lien youtube</label>
-    <%= u.text_field :lien, class: 'form-control' %>
-
-    <%= u.submit 'Valider', value:'valider', class: 'btn btn-primary' %>
+          <tr>
+            <th><h3>sous-titre</h3></th>
+            <td align="center"><h3><%= u.text_field :sous_titre, class: 'form-control' %></h3></td> 
+          </tr>
+          <tr>
+            <th><h4>date de sortie</h4></th>
+            <td align="center"><h4><%= u.text_field :duree, class: 'form-control' %></h4></td>
+          </tr>
+          <tr>
+            <th><h5>durée du film</h5></th>
+            <td align="center"><h5><%= u.text_field :annee, class: 'form-control' %><h5></td>   
+          </tr>
+        </table>
+      </div>
+    </center>
+     <div>
+        <hr>
+        <%= u.submit 'Valider', value:'valider', class: 'btn btn-primary' %>
+      </div>
   <% end %>
-</div>
+</center>

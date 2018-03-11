@@ -1,6 +1,27 @@
 <head><title>Series</title></head>
 <body style="background-image: url(<%= asset_path 'fond.jpg' %>);background-repeat:repeat;background-size: cover;">
-	<center class="banniere-info-g"><h1>Listes des differentes serie</h1></center>
+	<center class="banniere-info-g" style="	background-image: url('https://thumbs.dreamstime.com/t/fundo-ou-textura-cinzenta-da-parede-do-grunge-35766309.jpg');position: fixed; left:0; top:0; right: 0; z-index: 10 ">
+		<span class="type">Serie</span>
+		<span class="filtre-genre">
+			<form id="form1" action='<%= mangas_path %>' accept-charset="UTF-8" method="get">
+				<select name="genre" id="genre" class="form-control" tabindex="9" data-remote = "true" onchange="genreselect()")>
+					<% if @gselect == 0 %>
+						<option selected="selected"  value="0">All</option>
+					<% else %>
+						<option value="0">All</option>
+					<% end %>
+					<% @genres.each do |g|%>
+						<% if @gselect == g.id %>
+							<option selected="selected" value=<%= g.id %>><%= g.contenu %></option>
+						<% else %>
+							<option value=<%= g.id %>><%= g.contenu %></option>
+						<% end %>
+					<% end %>
+				</select>
+			</form>
+		</span>
+	</center>
+	<div style="margin-bottom: 8%"></div>
 	<% @mangas.each do |f| %>
 		<a href=<%= manga_path(f.id) %> >
 			<center class='card' style="background-color: <%= f.couleur%>">
@@ -17,3 +38,10 @@
 	<br>
 	<center><a href=<%= home_path %> class="btn">retour</a></center>
 </body>
+
+<script type="text/javascript">
+function genreselect()
+{
+	 document.getElementById("form1").submit();
+}
+</script>

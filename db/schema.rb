@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180305201729) do
+ActiveRecord::Schema.define(version: 20180308230037) do
 
   create_table "episodes", force: :cascade do |t|
     t.string "titre"
@@ -74,12 +74,29 @@ ActiveRecord::Schema.define(version: 20180305201729) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "repliques", force: :cascade do |t|
+    t.string "corps"
+    t.string "source"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "saisons", force: :cascade do |t|
     t.string "titre"
     t.integer "manga_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["manga_id"], name: "index_saisons_on_manga_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "pseudo"
+    t.string "password"
+    t.string "password_digest"
+    t.string "avatar"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

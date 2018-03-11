@@ -1,1 +1,14 @@
-<video id="video" poster=<%= @manga.image_url(:video) %>  src=<%= @episode.video_url %> width="1000" height="560" controls>Votre navigateur ne supporte pas le tag de la video</video>
+<div style ="display: flex; align-content: center; flex-direction: column;">
+	<div>
+		<% if @episode.titre != "" %><h4><%= @episode.titre %></h4><% else %><h4><%= @episode.num %></h4><% end %>
+	</div>
+	<div>
+		<div style ="display: flex; align-content: center;">
+			<div style="align-self: center;"><% if @episode.prev(@episode.saison_id).presence %><a data-remote = "true" href =<%= episode_path(@episode.prev(@episode.saison_id))%>><img src="https://cdn0.iconfinder.com/data/icons/arrows-android-l-lollipop-icon-pack/24/previous-128.png"></a><% end %></div>
+			<div>
+				<video id="video" poster=<%= @manga.image_url(:video) %>  src=<%= @episode.video_url %> width="1000" height="560" controls>Votre navigateur ne supporte pas le tag de la video</video>
+			</div>
+			<div style="align-self: center;"><% if @episode.next(@episode.saison_id).presence %><a data-remote = "true" href =<%= episode_path(@episode.next(@episode.saison_id))%>><img src="https://cdn0.iconfinder.com/data/icons/arrows-android-l-lollipop-icon-pack/24/next-128.png"></a><% end %></div>
+		</div>
+	</div>
+</div>

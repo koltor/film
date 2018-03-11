@@ -6,7 +6,19 @@ class MangasController < ApplicationController
   end
 
   def index
-  	@mangas = Manga.all
+    a =  params[:genre]
+    @mangas = Manga.all
+    @genres = Genre.all
+    genrelist = Genreassembly.where(genre_id: a, filme_id: nil)
+    @gselect = 0
+    if (a != nil && a != '0')
+      @gselect = a.to_i
+      tab = []
+      genrelist.each do |f|
+          tab << Manga.find(f.manga_id)
+        end
+      @mangas = tab
+    end
   end
 
   def new

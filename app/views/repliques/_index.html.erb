@@ -1,0 +1,16 @@
+<% @repliques.each do |r|%>
+	<h1><%= r.corps%></h1>
+	<p><%= r.source %></p>
+	<%= link_to 'Delete', r, method: :delete,class:"btn " %>
+	<hr>
+<% end %>
+
+<%= form_for @replique, remote: true do |u| %>
+	<label>Corps</label>
+  <p><%= u.text_area :corps, class: 'form-control' %></p>
+
+  <label>source</label>
+  <p><%= u.text_field :source,  class: 'form-control' %></p>
+
+  <%= u.submit 'Valider', value:'valider', class: 'btn btn-primary' %>
+<% end %>
